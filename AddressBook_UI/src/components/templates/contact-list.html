@@ -1,0 +1,26 @@
+<div style= "margin: 80px" id="contact-list">
+
+    <div class="row" >
+    <!-- <div class="col-xs-4">
+        <label>Search Contact: </label>
+        <input type="text" class="" style="margin-bottom: 25px; margin-top: -50px; color: grey"/>
+    </div> -->
+    <div class="col-xs-10" style="margin-top: 20px; margin-bottom: 20px" id="search-contact">
+        <input type="text" class="form-control" name="msg" placeholder="Search name here:" (input)="search($event.target.value)">
+    </div>
+    
+    <div class="col-xs-2" style="margin-top: 20px; margin-bottom: 20px">
+    <button class="btn btn-primary pull-right" [routerLink]="['/add-contact']" (click)=AddContact() id="add-contact">
+            <span class="glyphicon glyphicon-user"></span>Add Contact</button>
+    </div>
+    </div>
+    <ul class="list-group">
+        <button class="list-group-item" 
+        [routerLink] = "['/view-contact', c._id]"
+        *ngFor="let c of contacts">
+            {{c.gender | title}}
+            {{c.firstname}}
+            {{c.lastname}}
+    </button>
+    </ul>
+</div>

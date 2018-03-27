@@ -1,0 +1,43 @@
+<div class="text-center" id="contact-view">
+    {{contact.gender | title}}
+    {{contact.firstname | uppercase}}
+    {{contact.lastname | uppercase}}
+</div>
+
+<div class="row" id="contact-view">
+    <div class="col-xs-4">
+        Date of birth
+    </div>
+    <div class="col-xs-8">
+        {{contact.dob}}
+        (age : {{contact.dob | age}})
+    </div>
+    <div class="col-xs-4">
+        Phone
+    </div>
+    <div class="col-xs-8">
+        {{contact.phone}}
+    </div>
+    <div class="col-xs-4">
+        City
+    </div>
+    <div class="col-xs-8">
+        {{contact.city}}
+    </div>
+    <div class="col-xs-4">
+        Email
+    </div>
+    <div class="col-xs-8">
+        {{contact.email}}
+    </div>
+</div>
+
+<div style="margin: 50px" id="contact-view">
+<div class="col-xs-4"></div>
+<div class="col-xs-8">
+    <a id="edit-contact" class="btn btn-primary" [routerLink]="['/edit-contact', contact._id]">
+        <span class="glyphicon glyphicon-pencil"></span> Edit</a>
+    <button id="delete-contact" class="btn btn-danger" (click)=deleteContact()>
+        <span class="glyphicon glyphicon-trash"></span>Delete</button>
+</div>
+</div>
